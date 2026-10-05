@@ -121,9 +121,24 @@ header {
  
 nav { 
     position: relative; 
-    width: min(2000px, calc(100% - 4px)); 
+
+    /* =====================================================
+       BARRA LIQUID GLASS — PC
+       CAMBIA ESTOS VALORES SI QUIERES MODIFICARLA EN PC
+       ===================================================== */
+
+    /* ANCHO de la barra en PC:
+       - aumenta 4px para acercarla más a los bordes
+       - aumenta 20px/30px para hacerla más angosta */
+    width: min(1800px, calc(100% - 4px)); 
+
+    /* ALTO de la barra Liquid Glass en PC */
     height: 80px; 
+
+    /* DISTANCIA desde la parte superior en PC */
     margin: 10px auto 0; 
+
+    /* ESPACIO INTERNO izquierda/derecha de la barra en PC */
     padding: 0 28px; 
     display: flex; 
     align-items: center; 
@@ -138,6 +153,7 @@ nav {
     backdrop-filter: blur(24px) saturate(150%); 
     -webkit-backdrop-filter: blur(24px) saturate(150%); 
     border: 1px solid rgba(255, 255, 255, .16); 
+    /* REDONDEZ de la barra Liquid Glass en PC */
     border-radius: 24px; 
     box-shadow: 
         0 14px 45px rgba(0, 0, 0, .25), 
@@ -176,6 +192,7 @@ nav > * {
 } 
  
 .logo img { 
+    /* TAMAÑO DEL LOGO EN PC */
     width: 130px; 
     height: auto; 
     object-fit: contain; 
@@ -184,12 +201,16 @@ nav > * {
 nav ul { 
     display: flex; 
     align-items: center; 
+
+    /* SEPARACIÓN ENTRE OPCIONES DEL MENÚ EN PC */
     gap: 32px; 
     list-style: none; 
 } 
  
 nav li a { 
     color: var(--gris); 
+
+    /* TAMAÑO DE LETRA DEL MENÚ EN PC */
     font-size: 18px; 
     font-weight: 500; 
     transition: color .3s; 
@@ -1783,10 +1804,12 @@ body.catalogo-modal-open {
     .catalogo-specs strong { font-size: 10px; } 
 } 
  
-@media (prefers-reduced-motion: reduce) { 
-    .catalogo-product, 
-    .catalogo-product-image img, 
-    } 
+@media (prefers-reduced-motion: reduce) {
+    .catalogo-product,
+    .catalogo-product-image img {
+        transition: none !important;
+    }
+}
  
  
 /* ========================================================= 
@@ -1813,7 +1836,6 @@ body.catalogo-modal-open {
         transform: none !important; 
     } 
 } 
- quiero que borres el apartado de ctalo donde estan las opciones que dicen todos,  figuras, personajes, piezas etc, y que arregles el error qeu etiene al querer pedir una pieza, cuando sprieto solucitar pieza baja parab el apartado de envio pro whastsapp pero pasa un error y rebota y vuelve a subir, quiero que arregles eso y des un apartado en el qeu la imagen que eligieron, llegue con un mensaje de que quieren el pedido a mi whasapp
 
 /* =========================================================
    PEDIDO — ESTADO DE ENVÍO WHATSAPP
@@ -1845,4 +1867,747 @@ body.catalogo-modal-open {
     font-size: 14px;
     font-weight: 800;
     letter-spacing: .2px;
+}
+
+/* =========================================================
+   MYTECH 3D — OPTIMIZACIÓN EXCLUSIVA PARA CELULARES
+   IMPORTANTE: estas reglas NO modifican la versión de PC.
+========================================================= */
+@media (max-width: 800px) {
+    html, body { overflow-x: hidden; }
+
+    /* =====================================================
+       CELULAR — BARRA SUPERIOR
+       SOLO CAMBIA LA VERSIÓN MÓVIL
+       ===================================================== */
+    header { height: 66px; }
+
+    nav {
+        width: calc(100% - 18px); /* ANCHO barra móvil */
+        height: 54px;             /* ALTO barra móvil */
+        margin-top: 6px;          /* DISTANCIA desde arriba */
+        padding: 0 13px;          /* ESPACIO interno */
+        border-radius: 17px;      /* REDONDEZ Liquid Glass */
+    }
+
+    .logo img {
+        width: 96px;              /* TAMAÑO logo en celular */
+        height: auto;
+    }
+    #menuBtn { font-size: 20px; }
+    nav ul {
+        top: 60px;
+        width: 100%;
+        padding: 16px 18px 18px;
+        gap: 12px;
+        border-radius: 0 0 17px 17px;
+    }
+    nav li a { font-size: 14px; }
+
+    /* Hero más proporcionado */
+    .hero {
+        min-height: 92svh;
+        padding: 92px 6% 48px;
+    }
+    .hero-text { padding-top: 0; max-width: 520px; }
+    .hero h1 {
+        font-size: clamp(38px, 11.5vw, 58px);
+        line-height: .94;
+        letter-spacing: -2.5px;
+    }
+    .hero p {
+        max-width: 440px;
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+    .botones { gap: 9px; margin-top: 22px; }
+    .hero .btn, .hero .btn2 {
+        min-height: 44px;
+        padding: 0 17px;
+        font-size: 11px;
+        border-radius: 11px;
+    }
+
+    /* Secciones: menos espacios vacíos */
+    .seccion { padding: 64px 5%; }
+    .titulo { margin-bottom: 28px; }
+    .titulo h2 {
+        font-size: clamp(29px, 8vw, 42px);
+        line-height: 1;
+        letter-spacing: -1.8px;
+    }
+    .titulo p { font-size: 12px; line-height: 1.65; }
+
+    /* Servicios */
+    .servicios { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .servicio { padding: 18px 14px; min-height: 0; border-radius: 15px; }
+    .servicio i { font-size: 22px; margin-bottom: 12px; }
+    .servicio h3 { font-size: 13px; margin-bottom: 7px; }
+    .servicio p { font-size: 10px; line-height: 1.55; }
+
+    /* Trabajos / galería */
+    .galeria { grid-template-columns: 1fr 1fr; gap: 9px; }
+    .image-wrap { height: 220px; border-radius: 14px; }
+
+    /* Proceso */
+    .pasos { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .paso { padding: 18px 14px; border-radius: 15px; }
+    .paso h3 { font-size: 13px; }
+    .paso p { font-size: 10px; line-height: 1.55; }
+
+    /* Pedido */
+    .pedido-form {
+        padding: 19px 15px;
+        border-radius: 18px;
+    }
+    .pedido-form input,
+    .pedido-form textarea,
+    .pedido-form select {
+        font-size: 13px;
+        border-radius: 11px;
+    }
+    .pedido-form button[type="submit"] {
+        min-height: 46px;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+    .pedido-pieza-seleccionada { padding: 10px; gap: 10px; border-radius: 13px; }
+    .pedido-pieza-imagen { width: 62px; height: 62px; min-width: 62px; }
+    .pedido-pieza-info strong { font-size: 12px; }
+    .pedido-pieza-info span, .pedido-pieza-info small { font-size: 9px; }
+
+    /* Contacto */
+    .contacto { padding: 70px 18px; }
+    .contacto h2 { font-size: clamp(28px, 8vw, 40px); }
+    .contacto p { font-size: 12px; }
+
+    /* WhatsApp flotante */
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        right: 13px;
+        bottom: 13px;
+        font-size: 29px;
+    }
+
+    /* Robot */
+    .mytech-robot-area { height: 165px; margin-top: 0; }
+    .mytech-robot { width: 82px; height: 112px; bottom: -8px; }
+    .mytech-robot-speech {
+        max-width: 175px;
+        min-width: 125px;
+        padding: 9px 11px;
+        font-size: 9px;
+        line-height: 1.35;
+        bottom: 125px;
+    }
+
+    /* Catálogo compacto pero totalmente funcional */
+    .catalogo-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+    .catalogo-product { border-radius: 13px; }
+    .catalogo-product:hover,
+    .catalogo-product:focus-visible { transform: translate3d(var(--catalogo-shift), -3px, 0); }
+    .catalogo-product-image { aspect-ratio: .92 / 1; }
+    .catalogo-product-info { padding: 9px 9px 11px; }
+    .catalogo-product-info h3 { font-size: 10px; line-height: 1.25; }
+    .catalogo-product-info p { font-size: 7px; margin-top: 4px; }
+    .catalogo-product-info .catalogo-precio {
+        margin-top: 6px;
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    .catalogo-number {
+        top: 6px; left: 6px;
+        width: 25px; height: 25px;
+        font-size: 8px;
+        border-radius: 7px;
+    }
+    .catalogo-plus {
+        right: 6px; bottom: 6px;
+        width: 28px; height: 28px;
+        font-size: 17px;
+    }
+
+    /* =====================================================
+       CELULAR — VENTANA QUE ABRE AL TOCAR UNA PIEZA DEL CATÁLOGO
+       CAMBIA ESTOS VALORES PARA MODIFICAR SU TAMAÑO
+       ===================================================== */
+    .catalogo-modal {
+        padding: 10px;            /* Separación entre ventana y bordes del celular */
+        align-items: center;
+    }
+
+    .catalogo-modal-card {
+        width: min(320px, 94vw);  /* ANCHO: baja 94vw para hacerla más angosta */
+        max-height: 77svh;        /* ALTO MÁXIMO: baja 88 para hacerla más baja */
+        border-radius: 18px;      /* REDONDEZ de la ventana */
+    }
+
+    .catalogo-modal-media {
+        min-height: 31svh;        /* ALTO MÍNIMO DE LA IMAGEN */
+        max-height: 36svh;        /* ALTO MÁXIMO DE LA IMAGEN */
+    }
+    .catalogo-modal-content {
+        padding: 18px 16px 17px; /* ESPACIO INTERNO del texto del modal móvil */
+    }
+    .catalogo-modal-content h3 {
+        margin: 7px 0 9px;
+        font-size: 25px;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+    .catalogo-modal-content > p { font-size: 9px; line-height: 1.55; }
+    .catalogo-specs { margin-top: 13px; gap: 6px; }
+    .catalogo-specs > div { min-height: 51px; padding: 8px 9px; border-radius: 10px; }
+    .catalogo-specs small { margin-bottom: 4px; font-size: 6px; }
+    .catalogo-specs strong { font-size: 9px; }
+    .catalogo-modal-btn {
+        width: 100%;
+        min-height: 43px;
+        margin-top: 12px;
+        font-size: 9px;
+        border-radius: 11px;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero { min-height: 88svh; padding: 82px 5% 38px; }
+    .hero h1 { font-size: clamp(36px, 11vw, 48px); }
+    .hero p { font-size: 12px; }
+
+    .seccion { padding: 54px 4.5%; }
+    .servicios { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .servicio { padding: 15px 11px; }
+    .servicio i { font-size: 19px; }
+    .servicio h3 { font-size: 11px; }
+    .servicio p { font-size: 9px; }
+
+    .galeria { grid-template-columns: 1fr 1fr; gap: 7px; }
+    .image-wrap { height: 170px; }
+
+    .pasos { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .paso { padding: 15px 11px; }
+
+    .catalogo-grid { gap: 7px; }
+    .catalogo-product-info { padding: 8px; }
+    .catalogo-product-info h3 { font-size: 9.5px; }
+    .catalogo-product-info p { font-size: 7px; }
+
+    .pedido-form { padding: 16px 12px; }
+    .contacto { padding: 58px 16px; }
+
+    .mytech-robot-area { height: 145px; }
+    .mytech-robot { width: 72px; height: 100px; }
+    .mytech-robot-speech { bottom: 108px; max-width: 155px; }
+}
+
+/* Teléfonos muy angostos */
+@media (max-width: 360px) {
+    .logo img { width: 86px; }
+    .hero h1 { font-size: 34px; }
+    .hero .btn, .hero .btn2 { padding: 0 13px; font-size: 10px; }
+    .servicio { padding: 13px 9px; }
+    .catalogo-product-info h3 { font-size: 9px; }
+    .catalogo-modal-media { min-height: 28svh; }
+}
+
+
+/* =========================================================
+   MYTECH 3D — AJUSTE MÓVIL V2
+   Solo afecta celular/tablet. PC permanece sin cambios.
+========================================================= */
+@media (max-width: 800px) {
+    /* Evita que efectos hover/touch hagan que tarjetas se monten entre sí */
+    .galeria-item,
+    .galeria-item:hover,
+    .catalogo-product,
+    .catalogo-product:hover,
+    .catalogo-product:focus-visible {
+        transform: none !important;
+    }
+
+    /* Trabajos: imágenes más pequeñas, ordenadas y con aire */
+    .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        align-items: start;
+    }
+    .galeria-item {
+        min-width: 0;
+        overflow: hidden;
+    }
+    .image-wrap {
+        height: 155px;
+        border-radius: 13px;
+    }
+    .galeria img,
+    .galeria-item:hover img {
+        transform: none !important;
+        object-fit: cover;
+    }
+    .galeria h3 {
+        padding: 9px 3px 0;
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    /* Catálogo: tarjetas más bajas para que las fotos no dominen la pantalla */
+    .catalogo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        align-items: start;
+    }
+    .catalogo-product {
+        min-width: 0;
+        border-radius: 12px;
+    }
+    .catalogo-product-image {
+        aspect-ratio: 1.22 / 1;
+        max-height: 145px;
+    }
+    .catalogo-product-image img,
+    .catalogo-product:hover .catalogo-product-image img,
+    .catalogo-product:focus-visible .catalogo-product-image img {
+        transform: none !important;
+        object-fit: cover;
+    }
+    .catalogo-product-info {
+        padding: 8px 8px 10px;
+    }
+    .catalogo-product-info h3 {
+        font-size: 9.5px;
+        line-height: 1.25;
+    }
+    .catalogo-product-info p {
+        font-size: 7px;
+        line-height: 1.35;
+    }
+
+    /* Robot más abajo, más discreto y sin invadir el contenido */
+    .mytech-robot-area {
+        height: 135px;
+        margin-top: 18px;
+        margin-bottom: -25px;
+        padding-top: 40px;
+        overflow: hidden;
+    }
+    .mytech-robot-area::before {
+        top: 10px;
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+    .mytech-robot {
+        width: 68px;
+        height: 92px;
+        bottom: -18px;
+    }
+    .mytech-robot-speech {
+        bottom: 88px;
+        max-width: 150px;
+        min-width: 112px;
+        padding: 7px 9px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 520px) {
+    .galeria { gap: 9px; }
+    .image-wrap { height: 125px; }
+    .galeria h3 { font-size: 10px; }
+
+    .catalogo-grid { gap: 8px; }
+    .catalogo-product-image {
+        aspect-ratio: 1.28 / 1;
+        max-height: 125px;
+    }
+    .catalogo-product-info { padding: 7px 7px 9px; }
+    .catalogo-product-info h3 { font-size: 9px; }
+    .catalogo-product-info .catalogo-precio {
+        margin-top: 5px;
+        padding: 3px 7px;
+        font-size: 9px;
+    }
+
+    .mytech-robot-area {
+        height: 118px;
+        margin-top: 12px;
+        margin-bottom: -22px;
+        padding-top: 34px;
+    }
+    .mytech-robot {
+        width: 60px;
+        height: 82px;
+        bottom: -20px;
+    }
+    .mytech-robot-speech {
+        bottom: 77px;
+        max-width: 135px;
+        min-width: 105px;
+        font-size: 7.5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .image-wrap { height: 112px; }
+    .catalogo-product-image { max-height: 112px; }
+    .mytech-robot { width: 56px; height: 76px; bottom: -20px; }
+}
+
+/* =========================================================
+   MYTECH 3D — MÓVIL V3
+   Ajuste específico de SERVICIOS + PORTAFOLIO.
+   No modifica la versión de escritorio.
+========================================================= */
+@media (max-width: 800px) {
+    /* Secciones más compactas y con separación consistente */
+    #servicios,
+    #trabajos {
+        padding-top: 62px;
+        padding-bottom: 62px;
+        overflow: hidden;
+    }
+
+    #servicios .titulo,
+    #trabajos .titulo {
+        margin-bottom: 28px;
+    }
+
+    #servicios .titulo h2,
+    #trabajos .titulo h2 {
+        font-size: clamp(29px, 8vw, 42px);
+        line-height: 1.02;
+        letter-spacing: -1.8px;
+    }
+
+    #trabajos .titulo p {
+        max-width: 390px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    /* ¿Qué podemos crear?: tarjetas compactas, 2 por fila */
+    #servicios .servicios {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    #servicios .service-card,
+    #servicios .service-card:hover {
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        padding: 17px 13px 15px;
+        border-radius: 14px;
+        transform: none !important;
+        overflow: hidden;
+    }
+
+    #servicios .service-card b {
+        top: 10px;
+        right: 11px;
+        font-size: 20px;
+    }
+
+    #servicios .service-card i {
+        margin: 8px 0 17px;
+        font-size: 22px;
+    }
+
+    #servicios .service-card h3 {
+        margin: 0 0 7px;
+        font-size: 12px;
+        line-height: 1.2;
+    }
+
+    #servicios .service-card p {
+        margin: 0;
+        font-size: 8.5px;
+        line-height: 1.5;
+    }
+
+    /* Robot separado de las tarjetas */
+    #servicios .mytech-robot-area {
+        clear: both;
+        width: 100%;
+        height: 125px;
+        margin: 25px auto -18px;
+        padding-top: 30px;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    #servicios .mytech-robot {
+        width: 62px;
+        height: 86px;
+        bottom: -17px;
+    }
+
+    #servicios .mytech-robot-speech {
+        bottom: 82px;
+        max-width: 140px;
+        min-width: 105px;
+        padding: 7px 9px;
+        font-size: 7.5px;
+    }
+
+    /* Algunas ideas: fotos pequeñas, limpias y sin superposición */
+    #trabajos .galeria {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 10px;
+        align-items: start;
+    }
+
+    #trabajos .galeria-item,
+    #trabajos .galeria-item:hover {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        transform: none !important;
+        z-index: 1;
+        overflow: visible;
+    }
+
+    #trabajos .image-wrap {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        max-height: 165px;
+        border-radius: 13px;
+        overflow: hidden;
+    }
+
+    #trabajos .galeria img,
+    #trabajos .galeria-item:hover img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transform: none !important;
+    }
+
+    #trabajos .galeria h3 {
+        padding: 8px 2px 0;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.25;
+    }
+}
+
+@media (max-width: 520px) {
+    #servicios,
+    #trabajos {
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+
+    #servicios .titulo,
+    #trabajos .titulo {
+        margin-bottom: 22px;
+    }
+
+    #servicios .servicios {
+        gap: 8px;
+    }
+
+    #servicios .service-card,
+    #servicios .service-card:hover {
+        padding: 14px 11px 13px;
+        border-radius: 12px;
+    }
+
+    #servicios .service-card b {
+        top: 9px;
+        right: 9px;
+        font-size: 17px;
+    }
+
+    #servicios .service-card i {
+        margin: 7px 0 14px;
+        font-size: 19px;
+    }
+
+    #servicios .service-card h3 {
+        font-size: 10.5px;
+    }
+
+    #servicios .service-card p {
+        font-size: 7.5px;
+        line-height: 1.45;
+    }
+
+    #trabajos .galeria {
+        gap: 13px 8px;
+    }
+
+    #trabajos .image-wrap {
+        max-height: 135px;
+        border-radius: 11px;
+    }
+
+    #trabajos .galeria h3 {
+        padding-top: 7px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    #servicios .service-card {
+        padding: 12px 9px;
+    }
+    #servicios .service-card p {
+        font-size: 7px;
+    }
+    #trabajos .image-wrap {
+        max-height: 118px;
+    }
+}
+
+/* =========================================================
+   AJUSTE MOVIL V4 - LEGIBILIDAD + ROBOT
+   Solo afecta celulares. La version de PC permanece intacta.
+========================================================= */
+@media (max-width: 768px) {
+    /* ¿Qué podemos crear? - texto más legible sin agrandar tarjetas */
+    #servicios .service-card h3 {
+        font-size: 15px; /* CELULAR: tamaño del título dentro de cada cuadro */
+        line-height: 1.25;
+        margin-bottom: 8px;
+        letter-spacing: -0.15px;
+    }
+
+    #servicios .service-card p {
+        font-size: 11px; /* CELULAR: tamaño de la descripción de cada cuadro */
+        line-height: 1.45;
+    }
+
+    /* El robot ya no queda cortado por la franja inferior */
+    #servicios .mytech-robot-area {
+        height: 155px;
+        margin: 24px auto 8px;
+        padding-top: 34px;
+        padding-bottom: 12px;
+        overflow: visible;
+        background: transparent;
+        z-index: 2;
+    }
+
+    #servicios .mytech-robot {
+        width: 62px;
+        height: 86px;
+        bottom: 8px;
+        z-index: 3;
+    }
+
+    #servicios .mytech-robot-speech {
+        bottom: 91px;
+        z-index: 4;
+    }
+}
+
+@media (max-width: 520px) {
+    #servicios .service-card h3 {
+        font-size: 13.5px;
+    }
+
+    #servicios .service-card p {
+        font-size: 10px;
+        line-height: 1.42;
+    }
+
+    #servicios .mytech-robot-area {
+        height: 150px;
+        margin-bottom: 10px;
+    }
+
+    #servicios .mytech-robot {
+        bottom: 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    #servicios .service-card h3 {
+        font-size: 12.5px;
+    }
+
+    #servicios .service-card p {
+        font-size: 9.3px;
+    }
+}
+
+/* =========================================================
+   AJUSTE MOVIL V5 - ROBOT + VIDEO HERO
+   Solo afecta celular. PC permanece intacto.
+========================================================= */
+@media (max-width: 768px) {
+    /* =====================================================
+       CELULAR — VIDEO PRINCIPAL
+       68% = encuadre hacia la derecha.
+       Sube el porcentaje para moverlo MÁS a la derecha.
+       ===================================================== */
+    .hero-video {
+        object-position: 68% center;
+    }
+
+    /* Reserva espacio real para que el globo no tape el titulo superior */
+    #servicios .mytech-robot-area {
+        height: 185px;
+        margin: 52px auto 10px;
+        padding-top: 52px;
+        padding-bottom: 10px;
+        overflow: visible;
+    }
+
+    #servicios .mytech-robot {
+        width: 62px;
+        height: 86px;
+        bottom: 5px;
+    }
+
+    #servicios .mytech-robot-speech {
+        bottom: 94px;
+        max-width: 170px;
+        min-width: 125px;
+        font-size: 9px;
+        line-height: 1.3;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-video {
+        object-position: 72% center;
+    }
+
+    #servicios .mytech-robot-area {
+        height: 180px;
+        margin-top: 58px;
+        padding-top: 52px;
+    }
+
+    #servicios .mytech-robot-speech {
+        max-width: 160px;
+        bottom: 92px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-video {
+        object-position: 74% center;
+    }
+
+    #servicios .mytech-robot-area {
+        margin-top: 62px;
+    }
 }

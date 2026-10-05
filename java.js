@@ -661,7 +661,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]; 
  
  
-    let velocidad = 1.15; 
+    let velocidad = window.matchMedia("(max-width: 768px)").matches ? 0.18 : 1.15; 
  
  
     let x = 20; 
