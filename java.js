@@ -1,3 +1,25 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL MYTECH 3D
+   SEGURIDAD / MANTENIMIENTO:
+   - El número comercial se define UNA sola vez.
+   - No coloques contraseñas, tokens ni API keys en este archivo.
+========================================================= */
+const MYTECH_WHATSAPP = "51926850884";
+
+function configurarEnlacesWhatsApp() {
+    document.querySelectorAll("[data-whatsapp-link]").forEach(enlace => {
+        enlace.href = `https://wa.me/${MYTECH_WHATSAPP}`;
+        enlace.target = "_blank";
+        enlace.rel = "noopener noreferrer";
+    });
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", configurarEnlacesWhatsApp);
+} else {
+    configurarEnlacesWhatsApp();
+}
+
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
@@ -32,23 +54,32 @@ if (menuBtn && menu) {
 }
 
 
+
+
+/* =========================================================
+   PRECIOS DEL CATÁLOGO
+   Para cambiar un precio, edita data-cost="S/ XX" en index.html.
+========================================================= */
+document.querySelectorAll(".catalogo-product").forEach(producto => {
+    const precio = producto.querySelector(".catalogo-precio");
+    if (precio) {
+        precio.textContent = producto.dataset.cost || "Consultar";
+    }
+});
+
 const formulario = document.getElementById("formulario");
 
 /* =========================================================
-   PEDIDO POR WHATSAPP — ENVÍO DE IMAGEN REAL
-
-   El navegador obtiene la imagen seleccionada y la envía como
-   archivo al backend. El backend se encarga de subirla a
-   WhatsApp Cloud API y enviarla como imagen + mensaje.
+   PEDIDO DIRECTO POR WHATSAPP
+   Abre el WhatsApp de MyTech 3D con los datos del formulario
+   y el número de la pieza seleccionada del catálogo.
 ========================================================= */
 
 if (formulario) {
 
-    formulario.addEventListener("submit", async function (e) {
+    formulario.addEventListener("submit", function (e) {
 
         e.preventDefault();
-
-        const submitButton = formulario.querySelector('button[type="submit"]');
 
         const nombre =
             document.getElementById("nombre")?.value.trim() || "";
@@ -65,150 +96,70 @@ if (formulario) {
         const piezaNombre =
             document.getElementById("pedidoPiezaNombre")?.textContent.trim() || "";
 
-        const piezaImagen =
-            document.getElementById("pedidoPiezaImagen")?.getAttribute("src") || "";
+        const piezaNumero =
+            formulario.dataset.catalogoNumero || "";
 
-        if (!nombre || !descripcion) {
+        const piezaPrecio =
+            formulario.dataset.catalogoPrecio || "";
+
+        if (!nombre || !tipo || !descripcion) {
             return;
         }
 
+        let piezaTexto = "";
+
+        if (piezaNumero) {
+            piezaTexto = `Pieza del catálogo: N.º ${piezaNumero}`;
+
+            if (piezaNombre && piezaNombre !== "—") {
+                piezaTexto += ` — ${piezaNombre}`;
+            }
+
+            piezaTexto += "\n";
+            if (piezaPrecio) {
+                piezaTexto += `Precio: ${piezaPrecio}\n`;
+            }
+        }
+
         const mensaje =
-            `Hola MyTech 3D. Me gustaría solicitar una cotización para un proyecto de impresión 3D.\n\n` +
+            `Hola MyTech 3D. Me gustaría solicitar una cotización.\n\n` +
             `Nombre: ${nombre}\n` +
             `Tipo de proyecto: ${tipo || "No especificado"}\n` +
             `Tamaño aproximado: ${tamano || "No especificado"}\n` +
-            (piezaNombre && piezaNombre !== "—"
-                ? `Pieza seleccionada del catálogo: ${piezaNombre}\n`
-                : "") +
+            piezaTexto +
             `Descripción: ${descripcion}\n\n` +
             `Quedo atento a su respuesta y a la cotización correspondiente. Gracias.`;
+        const urlWhatsApp =
+            `https://wa.me/${MYTECH_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
 
-        /*
-         * IMPORTANTE:
-         * Si tu backend está en el mismo dominio que la web, deja esta ruta.
-         * Si está en otro dominio, cambia API_URL por la URL completa del endpoint.
-         */
-        const API_URL = "/api/whatsapp-order";
+        window.open(urlWhatsApp, "_blank", "noopener,noreferrer");
 
-        try {
+        // Reinicia el formulario inmediatamente después de abrir WhatsApp.
+        formulario.reset();
+        delete formulario.dataset.catalogoNumero;
+        delete formulario.dataset.catalogoPrecio;
 
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.classList.add("is-sending");
-                submitButton.dataset.originalText = submitButton.innerHTML;
-                submitButton.innerHTML =
-                    '<i class="fa-solid fa-spinner fa-spin"></i> Enviando pedido...';
-            }
+        const piezaSeleccionada =
+            document.getElementById("pedidoPiezaSeleccionada");
 
-            const datos = new FormData();
+        const piezaNombreElemento =
+            document.getElementById("pedidoPiezaNombre");
 
-            datos.append("nombre", nombre);
-            datos.append("tipo", tipo);
-            datos.append("tamano", tamano);
-            datos.append("descripcion", descripcion);
-            datos.append("piezaNombre", piezaNombre);
-            datos.append("mensaje", mensaje);
+        const piezaImagenElemento =
+            document.getElementById("pedidoPiezaImagen");
 
-            /*
-             * Convertimos la imagen seleccionada en un archivo real.
-             * De esta manera WhatsApp recibe una imagen, no un enlace.
-             */
-            if (piezaImagen) {
+        if (piezaSeleccionada) {
+            piezaSeleccionada.hidden = true;
+            piezaSeleccionada.classList.remove("is-visible");
+        }
 
-                const respuestaImagen = await fetch(piezaImagen, {
-                    cache: "no-store"
-                });
+        if (piezaNombreElemento) {
+            piezaNombreElemento.textContent = "—";
+        }
 
-                if (!respuestaImagen.ok) {
-                    throw new Error("No se pudo cargar la imagen seleccionada.");
-                }
-
-                const blob = await respuestaImagen.blob();
-
-                const extension =
-                    blob.type === "image/png" ? "png" : "jpg";
-
-                datos.append(
-                    "imagen",
-                    blob,
-                    `pieza-${Date.now()}.${extension}`
-                );
-            }
-
-            const respuesta = await fetch(API_URL, {
-                method: "POST",
-                body: datos
-            });
-
-            const resultado = await respuesta.json().catch(() => ({}));
-
-            if (!respuesta.ok || !resultado.success) {
-                throw new Error(
-                    resultado.error ||
-                    "No se pudo enviar el pedido por WhatsApp."
-                );
-            }
-
-            if (submitButton) {
-                submitButton.innerHTML =
-                    '<i class="fa-solid fa-check"></i> Pedido enviado';
-            }
-
-            /*
-             * No abrimos wa.me aquí porque ese método no puede adjuntar
-             * automáticamente la imagen. El backend ya hizo el envío real.
-             */
-
-            setTimeout(() => {
-                formulario.reset();
-
-                const piezaSeleccionada =
-                    document.getElementById("pedidoPiezaSeleccionada");
-
-                if (piezaSeleccionada) {
-                    piezaSeleccionada.hidden = true;
-                    piezaSeleccionada.classList.remove("is-visible");
-                }
-
-                const piezaNombreElemento =
-                    document.getElementById("pedidoPiezaNombre");
-
-                const piezaImagenElemento =
-                    document.getElementById("pedidoPiezaImagen");
-
-                if (piezaNombreElemento) {
-                    piezaNombreElemento.textContent = "—";
-                }
-
-                if (piezaImagenElemento) {
-                    piezaImagenElemento.removeAttribute("src");
-                }
-
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.classList.remove("is-sending");
-                    submitButton.innerHTML =
-                        submitButton.dataset.originalText ||
-                        '<i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp';
-                }
-
-            }, 1800);
-
-        } catch (error) {
-
-            console.error("Error enviando pedido:", error);
-
-            alert(
-                "No se pudo enviar el pedido. Verifica la configuración de WhatsApp Cloud API y vuelve a intentarlo."
-            );
-
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.classList.remove("is-sending");
-                submitButton.innerHTML =
-                    submitButton.dataset.originalText ||
-                    '<i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp';
-            }
+        if (piezaImagenElemento) {
+            piezaImagenElemento.removeAttribute("src");
+            piezaImagenElemento.alt = "Pieza seleccionada";
         }
     });
 }
@@ -1288,7 +1239,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!product) return;
 
         const productName = product.dataset.title || "Pieza seleccionada";
+        const productNumber =
+            product.querySelector(".catalogo-number")?.textContent.trim() || "";
         const imageUrl = getProductImage(product);
+
+        if (formulario) {
+            formulario.dataset.catalogoNumero = productNumber;
+        formulario.dataset.catalogoPrecio = product.dataset.cost || "";
+        }
 
         if (pedidoPiezaImagen) {
             pedidoPiezaImagen.src = imageUrl;
@@ -1296,7 +1254,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (pedidoPiezaNombre) {
-            pedidoPiezaNombre.textContent = productName;
+            pedidoPiezaNombre.textContent =
+                productNumber
+                    ? `N.º ${productNumber} — ${productName}`
+                    : productName;
         }
 
         if (pedidoPieza) {
@@ -1318,6 +1279,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return {
             name: productName,
+            number: productNumber,
             imageUrl
         };
     }

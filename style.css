@@ -121,8 +121,8 @@ header {
  
 nav { 
     position: relative; 
-    width: min(1760px, calc(100% - 48px)); 
-    height: 72px; 
+    width: min(2000px, calc(100% - 4px)); 
+    height: 80px; 
     margin: 10px auto 0; 
     padding: 0 28px; 
     display: flex; 
@@ -176,7 +176,7 @@ nav > * {
 } 
  
 .logo img { 
-    width: 145px; 
+    width: 130px; 
     height: auto; 
     object-fit: contain; 
 } 
@@ -190,7 +190,7 @@ nav ul {
  
 nav li a { 
     color: var(--gris); 
-    font-size: 14px; 
+    font-size: 18px; 
     font-weight: 500; 
     transition: color .3s; 
 } 
@@ -1826,4 +1826,23 @@ body.catalogo-modal-open {
 
 .pedido-form button[type="submit"].is-sending {
     pointer-events: none;
+}
+
+
+/* =========================================================
+   PRECIO VISIBLE EN EL CATÁLOGO
+   El valor se toma automáticamente de data-cost en index.html.
+========================================================= */
+.catalogo-product-info .catalogo-precio {
+    display: block;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 6px 11px;
+    border: 1px solid rgba(179, 255, 0, .28);
+    border-radius: 999px;
+    background: rgba(179, 255, 0, .08);
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .2px;
 }
