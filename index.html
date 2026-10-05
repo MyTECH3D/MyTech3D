@@ -1,0 +1,1100 @@
+ <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyTech 3D | Creamos lo que te imagines</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header id="header">
+
+        <nav>
+
+            <a href="#inicio" class="logo">
+                <img src="imagenes/MyTECH.png" alt="MyTECH">
+            </a>
+
+            <button id="menuBtn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul id="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#pedido">Pedido</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO / PRIMERA PANTALLA
+             SOLO ESTA PARTE FUE REDISEÑADA
+        ====================================================== -->
+
+        <section id="inicio" class="hero">
+
+            <!-- VIDEO DE FONDO -->
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+            >
+                <source
+                    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260606_154941_df1a96e1-a06f-450c-bd02-d863414cc1a0.mp4"
+                    type="video/mp4"
+                >
+            </video>
+
+            <!-- OSCURECE EL VIDEO -->
+            <div class="hero-overlay"></div>
+
+            <!-- BRILLO VERDE -->
+            <div class="hero-light"></div>
+
+            <!-- CONTENIDO -->
+            <div class="hero-text">
+
+                <span class="etiqueta hero-reveal">
+                    IMPRESIÓN 3D + MODELADO
+                </span>
+
+                <h1 class="hero-reveal">
+                    Creamos lo que te <span>imagines.</span>
+                </h1>
+
+                <p class="hero-reveal">
+                    Diseñamos y fabricamos figuras, piezas y objetos
+                    personalizados mediante modelado e impresión 3D.
+                </p>
+
+                <div class="botones hero-reveal">
+
+                    <a href="#pedido" class="btn">
+                        Crear mi idea
+                    </a>
+
+                    <a href="#trabajos" class="btn btn2">
+                        Ver trabajos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion presentacion">
+
+            <div class="titulo reveal-up">
+
+                <span>¿QUÉ HACEMOS?</span>
+
+                <h2>
+                    Tu idea puede convertirse en realidad.
+                </h2>
+
+                <p>
+                    No necesitas saber modelar. Tú nos cuentas tu idea
+                    y nosotros nos encargamos de convertirla en un modelo 3D.
+                </p>
+
+            </div>
+
+            <div class="cards">
+
+                <article class="glass-card reveal-card">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <h3>Tu idea</h3>
+
+                    <p>
+                        Puedes enviarnos una foto, dibujo o simplemente
+                        explicarnos qué quieres.
+                    </p>
+
+                </article>
+
+                <article class="glass-card reveal-card">
+
+                    <i class="fa-solid fa-cube"></i>
+
+                    <h3>Modelado 3D</h3>
+
+                    <p>
+                        Diseñamos tu modelo de acuerdo con tus medidas
+                        y características.
+                    </p>
+
+                </article>
+
+                <article class="glass-card reveal-card">
+
+                    <i class="fa-solid fa-print"></i>
+
+                    <h3>Impresión 3D</h3>
+
+                    <p>
+                        Convertimos el modelo digital en una pieza real.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="servicios" class="seccion oscuro">
+
+            <div class="titulo reveal-up">
+
+                <span>SERVICIOS</span>
+
+                <h2>
+                    ¿Qué podemos crear?
+                </h2>
+
+            </div>
+
+
+            <div class="servicios">
+
+                <div class="service-card reveal-card">
+
+                    <b>01</b>
+
+                    <i class="fa-solid fa-person"></i>
+
+                    <h3>
+                        Figuras personalizadas
+                    </h3>
+
+                    <p>
+                        Personajes, personas, mascotas y figuras creadas
+                        especialmente para ti.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card reveal-card">
+
+                    <b>02</b>
+
+                    <i class="fa-solid fa-cube"></i>
+
+                    <h3>
+                        Modelado 3D
+                    </h3>
+
+                    <p>
+                        Transformamos tus ideas y referencias en modelos
+                        tridimensionales.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card reveal-card">
+
+                    <b>03</b>
+
+                    <i class="fa-solid fa-gears"></i>
+
+                    <h3>
+                        Piezas a medida
+                    </h3>
+
+                    <p>
+                        Piezas, soportes, accesorios y objetos diseñados
+                        según tus medidas.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card reveal-card">
+
+                    <b>04</b>
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    <h3>
+                        Proyectos especiales
+                    </h3>
+
+                    <p>
+                        Si tienes una idea diferente, cuéntanosla y buscamos
+                        cómo hacerla realidad.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROBOT MYTECH: está en la parte inferior de la tercera sección -->
+
+            <div class="mytech-robot-area" id="mytech-robot-container">
+
+                <div class="mytech-robot" id="mytech-robot">
+
+                    <div class="mytech-robot-speech" id="mytech-robot-speech">
+                        <span id="mytech-robot-text">
+                            ¡Hola! 👋
+                        </span>
+                    </div>
+
+                    <div class="mytech-robot-body" id="mytech-robot-body">
+
+                        <svg
+                            class="mytech-robot-svg"
+                            viewBox="0 0 200 240"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <ellipse
+                                cx="100"
+                                cy="228"
+                                rx="42"
+                                ry="7"
+                                class="mytech-robot-shadow"
+                            />
+
+                            <g class="robot-arm-left">
+
+                                <path
+                                    d="M62 135 C45 142 38 165 42 185 C45 198 56 200 62 185 C66 172 65 150 66 140Z"
+                                    class="mytech-robot-body-part"
+                                />
+
+                                <path
+                                    d="M60 140 C47 148 42 168 45 183 C48 193 54 194 58 183 C61 173 61 153 62 144Z"
+                                    class="mytech-robot-accent"
+                                />
+
+                            </g>
+
+
+                            <ellipse
+                                cx="100"
+                                cy="170"
+                                rx="48"
+                                ry="55"
+                                class="mytech-robot-body-part"
+                            />
+
+
+                            <path
+                                d="M62 136 C62 136 78 128 100 128 C122 128 138 136 138 136 C138 148 128 168 100 168 C72 168 62 148 62 136Z"
+                                class="mytech-robot-accent"
+                            />
+
+
+                            <g
+                                class="robot-arm-right"
+                                id="robot-arm-right"
+                            >
+
+                                <path
+                                    d="M138 135 C155 142 162 165 158 185 C155 198 144 200 138 185 C134 172 135 150 134 140Z"
+                                    class="mytech-robot-body-part"
+                                />
+
+                                <path
+                                    d="M140 140 C153 148 158 168 155 183 C152 193 146 194 142 183 C139 173 139 153 138 144Z"
+                                    class="mytech-robot-accent"
+                                />
+
+                            </g>
+
+
+                            <ellipse
+                                cx="100"
+                                cy="82"
+                                rx="58"
+                                ry="48"
+                                class="mytech-robot-body-part"
+                            />
+
+
+                            <path
+                                d="M75 39 C85 34 115 34 125 39 C120 45 80 45 75 39Z"
+                                class="mytech-robot-accent"
+                            />
+
+
+                            <ellipse
+                                cx="100"
+                                cy="85"
+                                rx="46"
+                                ry="35"
+                                class="mytech-robot-screen"
+                            />
+
+
+                            <path
+                                id="mytech-eye-l"
+                                class="mytech-robot-eye"
+                                d="M72 82 A13 13 0 0 1 92 82 A5 5 0 0 1 72 82Z"
+                            />
+
+                            <path
+                                id="mytech-eye-r"
+                                class="mytech-robot-eye"
+                                d="M108 82 A13 13 0 0 1 128 82 A5 5 0 0 1 108 82Z"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="trabajos" class="seccion trabajos">
+
+            <div class="titulo reveal-up">
+
+                <span>PORTAFOLIO</span>
+
+                <h2>
+                    Algunas ideas que podemos crear
+                </h2>
+
+                <p>
+                    Después puedes reemplazar estas imágenes por tus propios trabajos.
+                </p>
+
+            </div>
+
+
+            <div class="galeria">
+
+                <article class="galeria-item image-reveal">
+
+                    <div class="image-wrap">
+
+                        <img
+                            src="imagenes/personalizadas.jpg"
+                            alt="Figuras personalizadas"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Figuras personalizadas
+                    </h3>
+
+                </article>
+
+
+                <article class="galeria-item image-reveal">
+
+                    <div class="image-wrap">
+
+                        <img
+                            src="imagenes/modelado.png"
+                            alt="Modelado e impresión"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Modelado e impresión
+                    </h3>
+
+                </article>
+
+
+                <article class="galeria-item image-reveal">
+
+                    <div class="image-wrap">
+
+                        <img
+                            src="imagenes/mayin.jpg"
+                            alt="Prototipos"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Prototipos
+                    </h3>
+
+                </article>
+
+
+                <article class="galeria-item image-reveal">
+
+                    <div class="image-wrap">
+
+                        <img
+                            src="imagenes/engrane.png"
+                            alt="Piezas a medida"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Piezas a medida
+                    </h3>
+
+                </article>
+
+
+                <article class="galeria-item image-reveal">
+
+                    <div class="image-wrap">
+
+                        <img
+                            src="imagenes/diseño.jpg"
+                            alt="Diseños personalizados"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Diseños personalizados
+                    </h3>
+
+                </article>
+
+
+                <article class="galeria-item image-reveal">
+
+                    <div class="image-wrap">
+
+                        <img
+                            src="imagenes/impresion.jpg"
+                            alt="Proyectos especiales"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Proyectos especiales
+                    </h3>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- =====================================================
+             CATÁLOGO — GALERÍA GRANDE + LIQUID GLASS
+        ====================================================== -->
+        <section id="catalogo" class="seccion catalogo-3d">
+            <div class="titulo reveal-up">
+                <span>CATÁLOGO 3D</span>
+                <h2>Explora nuestros trabajos</h2>
+                <p>Imágenes más grandes, más productos y una ficha interactiva para cada pieza.</p>
+            </div>
+
+            <div class="catalogo-grid" id="catalogoGrid">
+                <article class="catalogo-product" data-category="figuras" data-title="Figura personalizada" data-time="2 h 40 min" data-material="PLA" data-cost="S/ 35" data-size="20 × 12 × 12 cm" data-fill="20%" data-finish="Estándar" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Figura personalizada">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/personalizadas.jpg" alt="Figura personalizada" draggable="false">
+                        <span class="catalogo-number">01</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Figuras</span>
+                        <h3>Figura personalizada</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="figuras" data-title="Mini figura personalizada" data-time="1 h 50 min" data-material="PLA" data-cost="S/ 25" data-size="10 × 8 × 8 cm" data-fill="15%" data-finish="Estándar" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Mini figura personalizada">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/modelado.png" alt="Mini figura personalizada" draggable="false">
+                        <span class="catalogo-number">02</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Figuras</span>
+                        <h3>Mini figura personalizada</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="figuras" data-title="Personaje 3D" data-time="5 h 20 min" data-material="PLA+" data-cost="S/ 68" data-size="18 × 14 × 12 cm" data-fill="15%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Personaje 3D">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/mayin.jpg" alt="Personaje 3D" draggable="false">
+                        <span class="catalogo-number">03</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Figuras</span>
+                        <h3>Personaje 3D</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="figuras" data-title="Figura coleccionable" data-time="7 h 10 min" data-material="PLA+" data-cost="S/ 85" data-size="22 × 16 × 15 cm" data-fill="20%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Figura coleccionable">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/personalizadas.jpg" alt="Figura coleccionable" draggable="false">
+                        <span class="catalogo-number">04</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Figuras</span>
+                        <h3>Figura coleccionable</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="personajes" data-title="Busto personalizado" data-time="4 h 30 min" data-material="PLA" data-cost="S/ 60" data-size="16 × 12 × 10 cm" data-fill="10%" data-finish="Estándar" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Busto personalizado">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/modelado.png" alt="Busto personalizado" draggable="false">
+                        <span class="catalogo-number">05</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Personajes</span>
+                        <h3>Busto personalizado</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="personajes" data-title="Mascota 3D" data-time="6 h 15 min" data-material="PLA+" data-cost="S/ 78" data-size="20 × 15 × 14 cm" data-fill="15%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Mascota 3D">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/mayin.jpg" alt="Mascota 3D" draggable="false">
+                        <span class="catalogo-number">06</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Personajes</span>
+                        <h3>Mascota 3D</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="personajes" data-title="Avatar 3D" data-time="3 h 40 min" data-material="PLA" data-cost="S/ 48" data-size="14 × 11 × 10 cm" data-fill="12%" data-finish="Estándar" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Avatar 3D">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/diseño.jpg" alt="Avatar 3D" draggable="false">
+                        <span class="catalogo-number">07</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Personajes</span>
+                        <h3>Avatar 3D</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="personajes" data-title="Personaje especial" data-time="8 h 20 min" data-material="ABS" data-cost="S/ 105" data-size="25 × 18 × 16 cm" data-fill="20%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Personaje especial">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/impresion.jpg" alt="Personaje especial" draggable="false">
+                        <span class="catalogo-number">08</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Personajes</span>
+                        <h3>Personaje especial</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="piezas" data-title="Engranaje a medida" data-time="1 h 35 min" data-material="PETG" data-cost="S/ 28" data-size="12 × 12 × 3 cm" data-fill="35%" data-finish="Funcional" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Engranaje a medida">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/engrane.png" alt="Engranaje a medida" draggable="false">
+                        <span class="catalogo-number">09</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Piezas</span>
+                        <h3>Engranaje a medida</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="piezas" data-title="Pieza técnica" data-time="3 h 05 min" data-material="PETG" data-cost="S/ 48" data-size="18 × 10 × 8 cm" data-fill="30%" data-finish="Funcional" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Pieza técnica">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/modelado.png" alt="Pieza técnica" draggable="false">
+                        <span class="catalogo-number">10</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Piezas</span>
+                        <h3>Pieza técnica</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="piezas" data-title="Soporte personalizado" data-time="2 h 15 min" data-material="PETG" data-cost="S/ 38" data-size="15 × 12 × 6 cm" data-fill="25%" data-finish="Funcional" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Soporte personalizado">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/engrane.png" alt="Soporte personalizado" draggable="false">
+                        <span class="catalogo-number">11</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Piezas</span>
+                        <h3>Soporte personalizado</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="piezas" data-title="Repuesto a medida" data-time="4 h 40 min" data-material="ABS" data-cost="S/ 62" data-size="22 × 14 × 9 cm" data-fill="35%" data-finish="Funcional" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Repuesto a medida">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/impresion.jpg" alt="Repuesto a medida" draggable="false">
+                        <span class="catalogo-number">12</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Piezas</span>
+                        <h3>Repuesto a medida</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="prototipos" data-title="Prototipo funcional" data-time="6 h 25 min" data-material="PETG" data-cost="S/ 75" data-size="25 × 18 × 12 cm" data-fill="25%" data-finish="Prueba" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Prototipo funcional">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/mayin.jpg" alt="Prototipo funcional" draggable="false">
+                        <span class="catalogo-number">13</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Prototipos</span>
+                        <h3>Prototipo funcional</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="prototipos" data-title="Prototipo de prueba" data-time="5 h 40 min" data-material="PLA+" data-cost="S/ 65" data-size="21 × 16 × 12 cm" data-fill="20%" data-finish="Prueba" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Prototipo de prueba">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/modelado.png" alt="Prototipo de prueba" draggable="false">
+                        <span class="catalogo-number">14</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Prototipos</span>
+                        <h3>Prototipo de prueba</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="prototipos" data-title="Maqueta 3D" data-time="9 h 10 min" data-material="PLA" data-cost="S/ 98" data-size="30 × 20 × 16 cm" data-fill="15%" data-finish="Visual" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Maqueta 3D">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/diseño.jpg" alt="Maqueta 3D" draggable="false">
+                        <span class="catalogo-number">15</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Prototipos</span>
+                        <h3>Maqueta 3D</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="prototipos" data-title="Modelo conceptual" data-time="7 h 45 min" data-material="PLA+" data-cost="S/ 88" data-size="26 × 19 × 14 cm" data-fill="15%" data-finish="Visual" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Modelo conceptual">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/personalizadas.jpg" alt="Modelo conceptual" draggable="false">
+                        <span class="catalogo-number">16</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Prototipos</span>
+                        <h3>Modelo conceptual</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="accesorios" data-title="Accesorio personalizado" data-time="2 h 45 min" data-material="PLA" data-cost="S/ 32" data-size="12 × 8 × 5 cm" data-fill="15%" data-finish="Estándar" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Accesorio personalizado">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/diseño.jpg" alt="Accesorio personalizado" draggable="false">
+                        <span class="catalogo-number">17</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Accesorios</span>
+                        <h3>Accesorio personalizado</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="accesorios" data-title="Organizador" data-time="4 h 05 min" data-material="PETG" data-cost="S/ 55" data-size="22 × 14 × 8 cm" data-fill="25%" data-finish="Funcional" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Organizador">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/impresion.jpg" alt="Organizador" draggable="false">
+                        <span class="catalogo-number">18</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Accesorios</span>
+                        <h3>Organizador</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="accesorios" data-title="Base personalizada" data-time="3 h 20 min" data-material="PLA" data-cost="S/ 45" data-size="18 × 18 × 5 cm" data-fill="20%" data-finish="Estándar" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Base personalizada">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/personalizadas.jpg" alt="Base personalizada" draggable="false">
+                        <span class="catalogo-number">19</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Accesorios</span>
+                        <h3>Base personalizada</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="accesorios" data-title="Soporte para escritorio" data-time="2 h 55 min" data-material="PETG" data-cost="S/ 42" data-size="16 × 10 × 9 cm" data-fill="30%" data-finish="Funcional" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Soporte para escritorio">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/engrane.png" alt="Soporte para escritorio" draggable="false">
+                        <span class="catalogo-number">20</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Accesorios</span>
+                        <h3>Soporte para escritorio</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="decoracion" data-title="Decoración 3D" data-time="3 h 20 min" data-material="PLA" data-cost="S/ 45" data-size="18 × 14 × 8 cm" data-fill="10%" data-finish="Visual" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Decoración 3D">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/diseño.jpg" alt="Decoración 3D" draggable="false">
+                        <span class="catalogo-number">21</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Decoración</span>
+                        <h3>Decoración 3D</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="decoracion" data-title="Letrero personalizado" data-time="4 h 15 min" data-material="PLA" data-cost="S/ 58" data-size="28 × 10 × 2 cm" data-fill="10%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Letrero personalizado">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/impresion.jpg" alt="Letrero personalizado" draggable="false">
+                        <span class="catalogo-number">22</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Decoración</span>
+                        <h3>Letrero personalizado</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="especiales" data-title="Proyecto especial" data-time="8 h 15 min" data-material="ABS" data-cost="S/ 95" data-size="28 × 20 × 16 cm" data-fill="30%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Proyecto especial">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/impresion.jpg" alt="Proyecto especial" draggable="false">
+                        <span class="catalogo-number">23</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Especiales</span>
+                        <h3>Proyecto especial</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+                <article class="catalogo-product" data-category="especiales" data-title="Pieza premium" data-time="10 h 20 min" data-material="ABS" data-cost="S/ 120" data-size="32 × 24 × 18 cm" data-fill="35%" data-finish="Premium" data-description="Producto de catálogo de muestra. Reemplaza esta información por los datos reales de tu pieza." tabindex="0" role="button" aria-label="Ver detalles de Pieza premium">
+                    <div class="catalogo-product-image">
+                        <img src="imagenes/modelado.png" alt="Pieza premium" draggable="false">
+                        <span class="catalogo-number">24</span>
+                        <span class="catalogo-plus">+</span>
+                        <span class="catalogo-image-glow"></span>
+                    </div>
+                    <div class="catalogo-product-info">
+                        <span>Especiales</span>
+                        <h3>Pieza premium</h3>
+                        <p>Ver detalles <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="catalogo-modal" id="catalogoModal" aria-hidden="true">
+                <div class="catalogo-modal-backdrop" data-catalogo-close></div>
+                <div class="catalogo-modal-card" role="dialog" aria-modal="true" aria-labelledby="catalogoModalTitle">
+                    <button class="catalogo-modal-close" type="button" data-catalogo-close aria-label="Cerrar ficha">×</button>
+                    <div class="catalogo-modal-media">
+                        <div class="catalogo-modal-media-shine"></div>
+                        <img id="catalogoModalImage" src="" alt="">
+                    </div>
+                    <div class="catalogo-modal-content">
+                        <span class="catalogo-modal-category" id="catalogoModalCategory">PRODUCTO</span>
+                        <h3 id="catalogoModalTitle">Producto</h3>
+                        <p id="catalogoModalDescription">Descripción del producto.</p>
+                        <div class="catalogo-specs">
+                            <div><small>TIEMPO</small><strong id="catalogoModalTime">—</strong></div>
+                            <div><small>MATERIAL</small><strong id="catalogoModalMaterial">—</strong></div>
+                            <div><small>COSTO</small><strong id="catalogoModalCost">—</strong></div>
+                            <div><small>TAMAÑO</small><strong id="catalogoModalSize">—</strong></div>
+                            <div><small>RELLENO</small><strong id="catalogoModalFill">—</strong></div>
+                            <div><small>ACABADO</small><strong id="catalogoModalFinish">—</strong></div>
+                        </div>
+                        <button type="button" class="catalogo-modal-btn" id="catalogoModalOrder">Solicitar esta pieza <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="seccion oscuro">
+
+            <div class="titulo reveal-up">
+
+                <span>¿CÓMO FUNCIONA?</span>
+
+                <h2>
+                    De tu imaginación a tus manos
+                </h2>
+
+            </div>
+
+
+            <div class="pasos">
+
+                <div class="paso reveal-card">
+
+                    <strong>01</strong>
+
+                    <h3>Cuéntanos</h3>
+
+                    <p>
+                        Explícanos qué quieres crear.
+                    </p>
+
+                </div>
+
+
+                <div class="paso reveal-card">
+
+                    <strong>02</strong>
+
+                    <h3>Diseñamos</h3>
+
+                    <p>
+                        Realizamos el modelo 3D.
+                    </p>
+
+                </div>
+
+
+                <div class="paso reveal-card">
+
+                    <strong>03</strong>
+
+                    <h3>Aprobamos</h3>
+
+                    <p>
+                        Revisamos el diseño contigo.
+                    </p>
+
+                </div>
+
+
+                <div class="paso reveal-card">
+
+                    <strong>04</strong>
+
+                    <h3>Imprimimos</h3>
+
+                    <p>
+                        Fabricamos tu pieza.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="pedido" class="seccion pedido">
+
+            <div class="titulo reveal-up">
+
+                <span>HAZ TU PEDIDO</span>
+
+                <h2>
+                    Cuéntanos qué quieres crear
+                </h2>
+
+                <p>
+                    Completa los datos y te enviaremos directamente a WhatsApp.
+                </p>
+
+            </div>
+
+
+            <form id="formulario" class="pedido-form reveal-card">
+
+                <div class="pedido-pieza-seleccionada" id="pedidoPiezaSeleccionada" hidden>
+                    <div class="pedido-pieza-imagen">
+                        <img id="pedidoPiezaImagen" src="" alt="Pieza seleccionada">
+                    </div>
+                    <div class="pedido-pieza-info">
+                        <span>PIEZA SELECCIONADA</span>
+                        <strong id="pedidoPiezaNombre">—</strong>
+                        <small>Esta pieza se incluirá automáticamente en tu solicitud de WhatsApp.</small>
+                    </div>
+                </div>
+
+                <input
+                    id="nombre"
+                    type="text"
+                    placeholder="Tu nombre"
+                    required
+                >
+
+                <select id="tipo" required>
+
+                    <option value="">
+                        ¿Qué quieres crear?
+                    </option>
+
+                    <option>
+                        Figura personalizada
+                    </option>
+
+                    <option>
+                        Modelado 3D
+                    </option>
+
+                    <option>
+                        Pieza a medida
+                    </option>
+
+                    <option>
+                        Impresión 3D
+                    </option>
+
+                    <option>
+                        Otro proyecto
+                    </option>
+
+                </select>
+
+
+                <input
+                    id="tamano"
+                    type="text"
+                    placeholder="Tamaño aproximado"
+                >
+
+
+                <textarea
+                    id="descripcion"
+                    placeholder="Cuéntanos tu idea..."
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Enviar pedido por WhatsApp
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="contacto">
+
+            <h2 class="reveal-up">
+                ¿Tienes una idea?
+            </h2>
+
+            <p class="reveal-up">
+                No importa si solamente tienes una imagen, dibujo o una idea.
+                Nosotros podemos ayudarte.
+            </p>
+
+            <a
+                href="https://wa.me/51926850884"
+                target="_blank"
+                rel="noopener"
+                class="btn whatsapp reveal-up"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+                926 850 884
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">
+
+            <img
+                src="imagenes/MyTECH.png"
+                alt="MyTECH"
+            >
+
+        </div>
+
+        <p>
+            Creamos lo que imaginas.
+        </p>
+
+        <small>
+            © <span id="year"></span> MyTech 3D
+        </small>
+
+    </footer>
+
+
+    <a
+        href="https://wa.me/51926850884"
+        target="_blank"
+        rel="noopener"
+        class="whatsapp-float"
+        aria-label="Contactar por WhatsApp"
+    >
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="java.js"></script>
+
+</body>
