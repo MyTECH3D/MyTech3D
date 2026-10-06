@@ -96,6 +96,10 @@ if (formulario) {
         const piezaNombre =
             document.getElementById("pedidoPiezaNombre")?.textContent.trim() || "";
 
+        // Evita repetir "N.º 02 —" en el mensaje de WhatsApp.
+        const piezaNombreLimpio =
+            piezaNombre.replace(/^N\.º\s*[^—]+—\s*/i, "").trim();
+
         const piezaNumero =
             formulario.dataset.catalogoNumero || "";
 
@@ -111,8 +115,8 @@ if (formulario) {
         if (piezaNumero) {
             piezaTexto = `Pieza del catálogo: N.º ${piezaNumero}`;
 
-            if (piezaNombre && piezaNombre !== "—") {
-                piezaTexto += ` — ${piezaNombre}`;
+            if (piezaNombreLimpio && piezaNombreLimpio !== "—") {
+                piezaTexto += ` — ${piezaNombreLimpio}`;
             }
 
             piezaTexto += "\n";
@@ -122,7 +126,7 @@ if (formulario) {
         }
 
         const mensaje =
-            `Hola MyTech 3D. Me gustaría solicitar una cotización.\n\n` +
+            `Hola MyTech 3D. Me gustaría realizar un pedido.\n\n` +
             `Nombre: ${nombre}\n` +
             `Tipo de proyecto: ${tipo || "No especificado"}\n` +
             `Tamaño aproximado: ${tamano || "No especificado"}\n` +
@@ -1274,7 +1278,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (descriptionField) {
             descriptionField.value =
-                `Quiero solicitar la pieza "${productName}". Me gustaría recibir una cotización.`;
+                `Quiero solicitar la pieza "${productName}". Me gustaría recibir más información.`;
         }
 
         return {
